@@ -8,6 +8,17 @@
             <a class="nav-link " [routerLink]="['/lista-monedas']" routerLinkActive="active">LISTA MONEDAS</a>
           </li>
         </ul>
+        <form [formGroup]="buscarForm" id="buscarForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="">BUSCAR MONEDA POR SIMBOLO</label>
+            <input id="buscarInput" formControlName="simbolo" class="form-control" type="text" >
+            <button type="submit" class="btn btn-outline-primary">BUSCAR</button>
+          </div>
+        </form >
+        <div class="input-result" *ngFor= "let moneda of monedas">
+          <input id="resultInput" value={{moneda.name}}  class="form-control" type="text" disabled>
+          <a href={{moneda.url}}><img width="20" height="20" src="../../../assets/shuffle.png" alt="link"></a>
+        </div>
     </div>
 </div>
 

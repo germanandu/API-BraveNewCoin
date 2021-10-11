@@ -13,7 +13,13 @@ export class ApiService {
   getAllMonedas():Observable<ListaMonedas>{
     let headers = {'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
     'x-rapidapi-key': '2a941a22c3mshf7b7c259fd50d1fp1df59djsne6f8b0858c6b'}
-    let resp: any;
     return this.http.get<ListaMonedas>(this.url,{headers})
+  }
+
+  getMonedaWithSymbol(param:string):Observable<ListaMonedas>{
+    let headers = {'x-rapidapi-host': 'bravenewcoin.p.rapidapi.com',
+    'x-rapidapi-key': '2a941a22c3mshf7b7c259fd50d1fp1df59djsne6f8b0858c6b'}
+    let params = {'symbol': param};
+    return this.http.get<ListaMonedas>(this.url,{headers,params})
   }
 }

@@ -4,21 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaMonedasComponent } from './screens/lista-monedas/lista-monedas.component';
 import { BuscarMonedasComponent } from './screens/buscar-monedas/buscar-monedas.component';
-import { MenuComponent } from './models/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaMonedasComponent,
-    BuscarMonedasComponent,
-    MenuComponent,
+    BuscarMonedasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
