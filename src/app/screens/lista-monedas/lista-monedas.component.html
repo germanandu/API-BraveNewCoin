@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="container ">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link "  [routerLink]="['/buscar-monedas']" routerLinkActive="active" >BUSCAR MONEDA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " [routerLink]="['/lista-monedas']" routerLinkActive="active">LISTA MONEDAS</a>
+      </li>
+    </ul>
+    <div class="table-body">
+      <table height="600" width="600">
+          <thead>
+            <tr>
+              <td scope="col-4">Nombre</td>
+              <td scope="col-4">Criptomoneda</td>
+              <td scope="col-4">Link</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor= "let moneda of monedas">
+              <td scope="row">{{moneda.name}}</td>
+              <td>{{moneda.status}}</td>
+              <td><a href={{moneda.url}}><img width="20" height="20" src="../../../assets/shuffle.png" alt="link"></a></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  </div>
+</div>
+
+
+
+
+
